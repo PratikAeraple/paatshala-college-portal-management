@@ -66,7 +66,7 @@ function Classroomroute() {
                 <Login />
               </IsUserRedirect>
   
-              <ProtectedRoute user={loggedInMail} path="/classroom" exact>
+              <ProtectedRoute user={loggedInMail} path="/student/classroom" exact>
                 <Drawer />
                 <ol className="joined">
                   {createdClasses.map((item) => (
