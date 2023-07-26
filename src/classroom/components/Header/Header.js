@@ -6,12 +6,14 @@ import {
   Toolbar,
   Typography,
 } from "@material-ui/core";
-import { Add } from "@material-ui/icons";
+import { Add, Apps } from "@material-ui/icons";
 import React from "react";
 import { CreateClass, JoinClass } from "..";
 import { useLocalContext } from "../../context/context";
 import { useStyles } from "./style";
-import logo from "../../../assets/logo.png";
+import Navbar from './../../../loggedin/components/navbar/Navbar'
+import LoggedHeader from './../../../loggedin/components/header/Header'
+import Logo from './../../../assets/logo.svg'
 
 const Header = ({ children }) => {
   const classes = useStyles();
@@ -25,7 +27,7 @@ const Header = ({ children }) => {
     setCreateClassDialog,
     setJoinClassDialog,
     loggedInUser,
-    logout,
+    // logout,
   } = useLocalContext();
 
   const handleCreate = () => {
@@ -39,19 +41,20 @@ const Header = ({ children }) => {
   };
   return (
     <div className={classes.root}>
+      <LoggedHeader />
+      <Navbar />
       <AppBar className={classes.appBar} position="static">
         <Toolbar className={classes.toolbar}>
           <div className={classes.headerWrapper}>
-            {children}
-            <img
-              src={logo} height={30} alt="Classroom"
-            />
+            {/* {children} */}
+            
             <Typography variant="h6" className={classes.title}>
-              Classroom
+              PAATSHALA CLASSROOM
             </Typography>
           </div>
           <div className={classes.header__wrapper__right}>
             <Add onClick={handleClick} className={classes.icon} />
+            <Apps className={classes.icon} />
             <Menu
               id="simple-menu"
               anchorEl={anchorEl}
@@ -64,7 +67,7 @@ const Header = ({ children }) => {
             </Menu>
             <div>
               <Avatar
-                onClick={() => logout()}
+                // onClick={() => logout()}
                 src={loggedInUser?.photoURL}
                 className={classes.icon}
               />

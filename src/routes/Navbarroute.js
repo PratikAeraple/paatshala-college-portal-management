@@ -5,34 +5,39 @@ import feepayment from "./../loggedin/components/feepayment/feepayment"
 import library from "./../loggedin/components/library/library"
 import result from "./../loggedin/components/result/result"
 import textbook from "./../loggedin/components/textbook/textbook"
+import faculty from "./../loggedin/components/faculty/faculty"
+import classroom from "./Classroomroute"
+import HomePage from './../universal/pages/Homepage/Homepage.components';
+import Academic from './../universal/pages/Academic/Academic.components';
+import Contectus from './../universal/pages/ContaceUs/Contenctus.components';
+import Event from './../universal/pages/Events/Events.components';
+import Aboutus from './../universal/pages/Aboutus/Aboutus.components';
+
 
 function navbarroute() {
     return (
         <div>
           <Switch>
-          {/*admin navbar path routes*/}
-          <Route path="/admin/coursedetail" component={coursedetail} />
-          <Route path="/admin/feepayment" component={feepayment} />
-          <Route path="/admin/library" component={library} />
-          <Route path="/admin/result" component={result} />
-          <Route path="/admin/textbook" component={textbook} />
+          
+          {/* LoggedIn Route */}
+          <Route path="/coursedetail" component={coursedetail} />
+          <Route path="/feepayment" component={feepayment} />
+          <Route path="/library" component={library} />
+          <Route path="/result" component={result} />
+          <Route path="/textbook" component={textbook} />
+          <Route path="/classroom" component={classroom} />
+          <Route path="/facultycontact" component={faculty} />
 
-          {/*student navbar path routes*/}
-          <Route path="/student/coursedetail" component={coursedetail} />
-          <Route path="/student/feepayment" component={feepayment} />
-          <Route path="/student/library" component={library} />
-          <Route path="/student/result" component={result} />
-          <Route path="/student/textbook" component={textbook} />
+          {/* Universal Route */}
+          <Route exact path='/' component={HomePage} />
+          <Route path='/Academic' component={Academic} />
+          <Route path='/ContactUs' component={Contectus} />
+          <Route path='/Event' component={Event} />
+          <Route path='/AboutUs' component={Aboutus} />
 
-          {/*teacher navbar path routes*/}
-          <Route path="/teacher/coursedetail" component={coursedetail} />
-          <Route path="/teacher/feepayment" component={feepayment} />
-          <Route path="/teacher/library" component={library} />
-          <Route path="/teacher/result" component={result} />
-          <Route path="/teacher/textbook" component={textbook} />
           </Switch>
         </div>
-    )
+    ) 
 }
 
 export default navbarroute

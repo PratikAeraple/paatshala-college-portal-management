@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Drawer, JoinedClasses, Login, Main } from "./../classroom/components";
-import { Switch, Route } from "react-router-dom";
-import { IsUserRedirect, ProtectedRoute } from "./../routes/Routes";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { IsUserRedirect, ProtectedRoute } from "./Routes";
 import { useLocalContext } from "./../classroom/context/context";
 import db from "./../lib/firebase";
 
-
 function Classroomroute() {
-       
-  
   const { loggedInMail } = useLocalContext();
 
   const [createdClasses, setCreatedClasses] = useState([]);
@@ -40,47 +37,46 @@ function Classroomroute() {
       return () => unsubscribe();
     }
   }, [loggedInMail]);
-
   return (
-    <div>
-            <Switch>
-            
-              {createdClasses.map((item, index) => (
-                <Route key={index} path={`/${item.id}`}>
-                  <Drawer />
-                  <Main classData={item} />
-                </Route>
-              ))}
-              {joinedClasses.map((item, index) => (
-                <Route key={index} path={`/${item.id}`}>
-                  <Drawer />
-                  <Main classData={item} />
-                </Route>
-              ))}
-              <IsUserRedirect
-                user={loggedInMail}
-                loggedInPath="/student"
-                path="/signin"
-                exact
-              >
-                <Login />
-              </IsUserRedirect>
-  
-              <ProtectedRoute user={loggedInMail} path="/student/classroom" exact>
-                <Drawer />
-                <ol className="joined">
-                  {createdClasses.map((item) => (
-                    <JoinedClasses classData={item} />
-                  ))}
-  
-                  {joinedClasses.map((item) => (
-                    <JoinedClasses classData={item} />
-                  ))}
-                </ol>
-              </ProtectedRoute>
-            </Switch>
-        </div>
-    )
+    <Router>
+      
+      <Switch>
+        {createdClasses.map((item, index) => (
+          <Route key={index} exact path={`/${item.id}`}>
+            <Drawer />
+            <Main classData={item} />
+          </Route>
+        ))}
+        {joinedClasses.map((item, index) => (
+          <Route key={index} exact path={`/${item.id}`}>
+            <Drawer />
+            <Main classData={item} />
+          </Route>
+        ))}
+        <IsUserRedirect
+          user={loggedInMail}
+          loggedInPath="/classroom"
+          path="/signin"
+          exact
+        >
+          <Login />
+        </IsUserRedirect>
+
+        <ProtectedRoute user={loggedInMail} path="/classroom" exact>
+          <Drawer />
+          <ol className="joined">
+            {createdClasses.map((item) => (
+              <JoinedClasses classData={item} />
+            ))}
+
+            {joinedClasses.map((item) => (
+              <JoinedClasses classData={item} />
+            ))}
+          </ol>
+        </ProtectedRoute>
+      </Switch> 
+    </Router>
+  );
 }
 
-export default Classroomroute
+export default Classroomroute;

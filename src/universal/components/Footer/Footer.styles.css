@@ -1,0 +1,16 @@
+.footer{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 30px;
+}
+
+
+ .f-title{
+    text-decoration: none;
+    color: white;
+}
+

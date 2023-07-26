@@ -41,11 +41,8 @@ const CreateClass = () => {
                 </a>
               </p>
               <p>
-                PAATSHALA for Education lets schools decide which services
-                their students can use, and provides additional
-                <a href="/privacy" className="class__link2 class__link">
-                  privacy and security
-                </a>
+                PAATSHALA for Education lets schools decide which Google services
+                their students can use, and provides additional privacy and security                
                 protections that are important in a school setting. Students
                 cannot use PAATSHALA Classroom at a school with personal accounts.
               </p>

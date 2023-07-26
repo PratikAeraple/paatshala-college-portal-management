@@ -1,7 +1,7 @@
-.box3{
-    width: 25%;
-    height: 25%;
-    margin: 20px ;
+.box5{
+    width: 300px;
+    height: 420px;
+    margin: 20px;
     padding: 20px 20px 20px 20px;
     background-color: #f0f0f0;
     font-size: 20px;
@@ -10,11 +10,17 @@
     letter-spacing: .01em;
     overflow: hidden;
     text-align: center;
-  
+    text-decoration: none;
+    color: black;
 }
 
-.mb{
+.mb5{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.box_image{
+    padding-bottom: 20px;
+    width: 200px;
 }

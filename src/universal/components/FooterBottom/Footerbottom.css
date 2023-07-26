@@ -1,0 +1,32 @@
+.footerBootom{
+    background-color: black;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    
+}
+.fboption{
+    padding: 5px 15px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+ }
+
+ .p{
+     color: white;
+     font-size: 20px;
+ }
+
+ .a{
+     text-decoration: none;
+     color: white;
+ }
+
+ .a:hover{
+     color: blue;
+ }
+

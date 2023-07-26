@@ -2,7 +2,7 @@ import { Button, DialogActions, TextField } from "@material-ui/core";
 import React, { useState } from "react";
 import { useLocalContext } from "../../context/context";
 import { v4 as uuidV4 } from "uuid";
-import db from "../../../lib/firebase";
+import db from "./../../../lib/firebase";
 
 const Form = () => {
   const [className, setClassName] = useState("");
@@ -16,7 +16,6 @@ const Form = () => {
     e.preventDefault();
     const id = uuidV4();
 
-    //collect data in DB
     db.collection("CreatedClasses")
       .doc(loggedInMail)
       .collection("classes")
@@ -32,7 +31,6 @@ const Form = () => {
         setCreateClassDialog(false);
       });
   };
-  
   return (
     <div className="form">
       <p className="class__title">Create Class</p>

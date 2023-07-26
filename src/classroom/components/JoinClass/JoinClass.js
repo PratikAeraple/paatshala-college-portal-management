@@ -3,7 +3,7 @@ import { Avatar, Button, Dialog, Slide, TextField } from "@material-ui/core";
 import { useLocalContext } from "../../context/context";
 import { Close } from "@material-ui/icons";
 import "./style.css";
-import db from "../../../lib/firebase";
+import db from "./../../../lib/firebase";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -140,3 +140,4 @@ const JoinClass = () => {
   );
 };
 export default JoinClass;
+

@@ -1,0 +1,25 @@
+.boxteacher{
+    width: 25%;
+    height: 25%;
+    margin: 20px ;
+    padding: 20px 20px 20px 20px;
+    background-color: #f0f0f0;
+    font-size: 20px;
+    border-radius: 25px;
+    box-shadow: -2px 2px 2px 2px rgba(0,0,0,0.3);
+    letter-spacing: .01em;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.mbteacher{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.faculty_image_teacher{
+    padding-bottom: 40px;
+}

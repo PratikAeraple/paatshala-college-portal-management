@@ -1,0 +1,15 @@
+.Academic-box{
+    width: 80%;
+    height: 80%;
+    margin: 20px auto;
+    padding: 20px 20px 20px 20px;
+    background-color: #f0f0f0;
+    font-size: 20px;
+    border-radius: 25px;
+    box-shadow: -10px 10px 20px rgba(0,0,0,0.3);
+    letter-spacing: .02em;
+    
+} 
+.padding{
+    padding-bottom: 30px;
+}

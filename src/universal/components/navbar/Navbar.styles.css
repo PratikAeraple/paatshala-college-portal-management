@@ -1,0 +1,16 @@
+.options{
+    height: 130%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #e6e6e6;
+}
+
+.option{
+   padding: 5px 15px;
+   cursor: pointer;
+   text-decoration: none;
+   color: black;
+   font-size: 20px;
+}
+

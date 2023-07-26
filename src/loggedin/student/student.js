@@ -1,13 +1,16 @@
+
 import React from 'react'
-import StudentNavbar from './StudentNavbar/StudentNavbar'
+import './Header.css'
+import Classroomroute from './../../routes/Classroomroute'
 
 function student() {
     return (
         <div>
-            <StudentNavbar />
-            <h1>Student</h1>
+        
+            <Classroomroute /> 
+                
         </div>
     )
 }
 
-export default student 
+export default student  
